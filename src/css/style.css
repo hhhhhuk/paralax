@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+
+}
+@font-face {
+    font-family: kamerik-3D;
+    src: url(../fonts/kamerik205-heavy.woff2);
+    font-weight: 900;
+}
+@font-face {
+    font-family: Italia-woff2;
+    src: url(../fonts/merriweather-regular-italic.woff2);
+}
+body {
+    background-color: black;
+    color:  white;
+    font-family: kamerik-3D;
+}
+.loga {
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+.layers {
+    perspective: 1000px;
+
+}
+
+.layers-container {
+    height: 100vh;
+    transform-style: preserve-3d;
+
+}
+.layer-item {
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    background-size: cover;
+    background-position: center;
+    transform: rotateX(var(--move-x)) rotateY(var(--move-y));
+    inset: -7vw;
+}
+
+.layer-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.content__btn {
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    opacity: 70%;
+    width: 140px;
+    height: 20px;
+}
