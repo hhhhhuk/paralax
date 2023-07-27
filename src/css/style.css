@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 :root {
+    transition: 1s cubic-bezier(0.125, 0.495, 0.000, 1)
 
 }
 @font-face {
@@ -28,12 +29,15 @@ body {
 
 .layers {
     perspective: 1000px;
-
+    overflow: hidden;
 }
 
 .layers-container {
     height: 100vh;
     transform-style: preserve-3d;
+    transform: rotateX(var(--move-x)) rotateY(var(--move-y));
+    transition: transform var(--transition);
+    will-change: transform;
 
 }
 .layer-item {
@@ -62,4 +66,28 @@ body {
     opacity: 70%;
     width: 140px;
     height: 20px;
+}
+
+
+.layer-1 {
+    transform: translateZ(-150px) scale(1.5);
+}
+.layer-2 {
+    transform: translateZ(50px);
+}
+.layer-3 {
+    transform: translateZ(210px);
+}
+.layer-4 {
+    transform: translateZ(100px);
+}
+.layer-5 {
+    transform: translateZ(90px);
+}
+.layer-6 {
+    transform: translateZ(350px);
+}
+
+.layer-4, .layer-5, .layer-6 {
+    pointer-events: none;
 }
